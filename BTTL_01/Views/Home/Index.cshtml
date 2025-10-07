@@ -1,0 +1,31 @@
+﻿@model List<BTTL_01.Models.SanPham>
+
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Header -->
+<header class="masthead">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                    <h1 class="display-1 lh-1 mb-3">Thư Viện Ebook Miễn Phí</h1>
+                    <p class="lead fw-normal text-muted mb-5">
+                        Nhà sách miễn phí được xây dựng nhằm chia sẻ sách ebook miễn phí cho những ai khó khăn, chưa có điều kiện mua sách.
+                        Nếu Bạn có điều kiện, Hãy mua sách giấy để ủng hộ Tác giả và Nhà xuất bản.
+                    </p>
+                    <a class="btn btn-primary rounded-pill px-4 py-2" href="@Url.Action("HienThiSanPham","Home")">
+                        <i class="bi-book me-2"></i> Xem sản phẩm
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="device-wrapper mx-auto" style="max-width: 300px;">
+                    <img src="~/assets/img/Bia.jpg" class="figure-img" />
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
