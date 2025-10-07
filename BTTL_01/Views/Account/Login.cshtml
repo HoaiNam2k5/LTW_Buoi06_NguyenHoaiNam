@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg rounded-4">
+                <div class="card-header bg-primary text-white text-center py-3 rounded-top-4">
+                    <h4 class="mb-0">Đăng nhập hệ thống</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post" action="/Account/Login">
+                        <div class="form-group mb-3">
+                            <label for="sodienthoai" class="form-label fw-bold">📱 Số điện thoại</label>
+                            <input type="text" class="form-control form-control-lg" id="sodienthoai" name="sodienthoai" placeholder="Nhập số điện thoại..." required />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="matkhau" class="form-label fw-bold">🔒 Mật khẩu</label>
+                            <input type="password" class="form-control form-control-lg" id="matkhau" name="matkhau" placeholder="Nhập mật khẩu..." required />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 mt-3">Đăng nhập</button>
+                    </form>
+
+                    @if (ViewBag.ThongBao != null)
+                    {
+                        <div class="alert alert-danger mt-3 text-center">
+                            @ViewBag.ThongBao
+                        </div>
+                    }
+                </div>
+                <div class="card-footer text-center text-muted py-2">
+                    © 2025 - Website bán sách BTTL_01
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

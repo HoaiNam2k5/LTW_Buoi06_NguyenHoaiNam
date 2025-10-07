@@ -102,6 +102,30 @@ namespace BTTL_01.Models
             return list;
         }
 
+        public TaiKhoan KiemTraDangNhap(string sdt, string matkhau)
+        {
+            TaiKhoan tk = null;
+            using (SqlConnection cnn = new SqlConnection(strcon))
+            {
+                cnn.Open();
+                string sql = "SELECT * FROM TBL_KHACHHANG WHERE SODIENTHOAI = @sdt AND MATKHAU = @matkhau";
+                SqlCommand cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.AddWithValue("@sdt", sdt);
+                cmd.Parameters.AddWithValue("@matkhau", matkhau);
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    tk = new TaiKhoan();
+                    tk.MaKH = rd["MAKH"].ToString();
+                    tk.TenKH = rd["TENKH"].ToString();
+                    tk.SoDienThoai = rd["SODIENTHOAI"].ToString();
+                    tk.MatKhau = rd["MATKHAU"].ToString();
+                }
+            }
+            return tk;
+        }
+
 
     }
 }

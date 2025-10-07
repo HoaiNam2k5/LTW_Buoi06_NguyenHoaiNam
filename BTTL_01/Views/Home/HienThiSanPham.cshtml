@@ -1,4 +1,8 @@
 ﻿@model List<BTTL_01.Models.SanPham>
+@if (ViewBag.ThongBao != null)
+{
+    <h3 style="color:green;">@ViewBag.ThongBao</h3>
+}
 
 @{
     ViewBag.Title = "Danh sách sản phẩm";

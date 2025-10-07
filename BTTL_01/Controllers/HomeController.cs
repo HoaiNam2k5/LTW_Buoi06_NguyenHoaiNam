@@ -12,6 +12,10 @@ namespace BTTL_01.Controllers
     {
         public ActionResult Index()
         {
+            if (TempData["ThongBao"] != null)
+            {
+                ViewBag.ThongBao = TempData["ThongBao"].ToString();
+            }
             return View();
         }
 
